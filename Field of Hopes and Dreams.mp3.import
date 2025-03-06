@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp3c8loapudd4"
+path="res://.godot/imported/Field of Hopes and Dreams.mp3-e5c77203f7039bf39afba6f0067c1133.mp3str"
+
+[deps]
+
+source_file="res://Field of Hopes and Dreams.mp3"
+dest_files=["res://.godot/imported/Field of Hopes and Dreams.mp3-e5c77203f7039bf39afba6f0067c1133.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

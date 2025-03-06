@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://bn521m5sv2ic6"]
+
+[ext_resource type="Script" path="res://game_1.gd" id="1_oypch"]
+[ext_resource type="Script" path="res://Mouse_Movement.gd" id="2_6c4c4"]
+[ext_resource type="Texture2D" uid="uid://dmganxwtr5i46" path="res://Untitled.png" id="2_hsvbx"]
+[ext_resource type="Script" path="res://button.gd" id="3_tkxj3"]
+[ext_resource type="PackedScene" uid="uid://cqnmkkrx8qepi" path="res://balls.tscn" id="5_17qvd"]
+[ext_resource type="Script" path="res://Death.gd" id="6_6kymw"]
+[ext_resource type="Script" path="res://Wallscaling.gd" id="7_ejl30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bojxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meve8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wq67"]
+
+[node name="Game1" type="Node2D" groups=["Brik"]]
+light_mask = 5
+visibility_layer = 5
+script = ExtResource("1_oypch")
+
+[node name="balls" parent="." groups=["Brik"] instance=ExtResource("5_17qvd")]
+position = Vector2(55, 141)
+scale = Vector2(0.155352, 0.155352)
+collision_layer = 7
+collision_mask = 7
+
+[node name="Button" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 55.0
+offset_bottom = 33.0
+scale = Vector2(0.220589, 0.17783)
+text = "Menu"
+script = ExtResource("3_tkxj3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(55, 171)
+scale = Vector2(0.294882, -0.0414022)
+motion_mode = 1
+wall_min_slide_angle = 3.14159
+script = ExtResource("2_6c4c4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(4.00461, -4.85223)
+shape = SubResource("RectangleShape2D_bojxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.08607, 0.08607)
+texture = ExtResource("2_hsvbx")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1136, 208)
+rotation = 1.5708
+scale = Vector2(158.176, 1.57373)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.101167, 372.999)
+rotation = 1.5708
+scale = Vector2(47.2857, -0.0150721)
+skew = -0.000618696
+shape = SubResource("RectangleShape2D_meve8")
+script = ExtResource("6_6kymw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1.00106, 1.00106)
+script = ExtResource("7_ejl30")
+
+[node name="Rightwall" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 0
+position = Vector2(136.855, 693.265)
+rotation = 1.5708
+scale = Vector2(158.009, 1.57206)
+shape = SubResource("RectangleShape2D_3wq67")
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11.9873, 0)
+rotation = 1.5708
+scale = Vector2(163.202, -1.18267)
+shape = SubResource("RectangleShape2D_3wq67")
+
+[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(420.554, -10.9884)
+rotation = 3.14159
+scale = Vector2(1164.6, 0.861849)
+shape = SubResource("RectangleShape2D_3wq67")
+
+[connection signal="body_entered" from="Area2D" to="balls" method="_on_area_2d_body_entered"]

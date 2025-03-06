@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm6g7hfi0ujgi"]
+
+[ext_resource type="Script" path="res://rscore.gd" id="1_3e2xe"]
+
+[node name="Rscore" type="Node"]
+script = ExtResource("1_3e2xe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 36.0
+offset_top = 179.0
+offset_right = 76.0
+offset_bottom = 202.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer"]
+light_mask = 0
+visibility_layer = 4
+z_index = -1
+offset_left = 99.0
+offset_right = 157.0
+offset_bottom = 23.0
+scale = Vector2(0.311344, 0.311344)
+text = "Level: ∞"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

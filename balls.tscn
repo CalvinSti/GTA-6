@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqnmkkrx8qepi"]
+
+[ext_resource type="Script" path="res://ballphysics.gd" id="1_qpxnu"]
+[ext_resource type="Texture2D" uid="uid://d0b2cimeh4kgg" path="res://Untitled 03-03-2025 02-49-35.png" id="2_jnfyj"]
+[ext_resource type="AudioStream" uid="uid://bunvve2v7r827" path="res://Undertale Ost 024 - Bonetrousle.mp3" id="3_yi37i"]
+[ext_resource type="AudioStream" uid="uid://crduwdb0f54x5" path="res://NOW_S YOUR CHANCE TO BE A BIG SHOT! - (DELTARUNE CHAPTER 2 OST) (MIX).mp3" id="4_4cr4u"]
+[ext_resource type="AudioStream" uid="uid://bp3c8loapudd4" path="res://Field of Hopes and Dreams.mp3" id="5_fbigo"]
+[ext_resource type="AudioStream" uid="uid://cr8q665ptsy2t" path="res://Undertale OST_ 065 - CORE.mp3" id="6_sm5cd"]
+[ext_resource type="AudioStream" uid="uid://m2cgssqdfrpx" path="res://Undertale OST_ 036 - Dummy!.mp3" id="7_5ae3u"]
+[ext_resource type="AudioStream" uid="uid://dh82b2eyjc1ib" path="res://Undertale OST_ 072 - Song That Might Play When You Fight Sans.mp3" id="8_g8jsx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5x13"]
+radius = 3.0746
+
+[sub_resource type="Curve" id="Curve_jwrew"]
+min_value = 5.0
+max_value = 20.0
+_data = [Vector2(0.106742, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.032967), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kuvdr"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0266667, 0.233333, 0.3, 0.426667, 0.44, 0.946667, 0.96)
+colors = PackedColorArray(0.723609, 0.481255, 0.577099, 1, 1, 1, 1, 1, 0.95879, 0.293304, 0.604323, 1, 0.95879, 0.293304, 0.604323, 1, 0.0745098, 1, 0.501961, 1, 0.384949, 0.751905, 0.537896, 1, 0.845904, 0.383521, 0.591255, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kckme"]
+offsets = PackedFloat32Array(0.973333, 0.986667, 0.993333, 1)
+colors = PackedColorArray(0.949376, 0.196086, 0.0445583, 1, 0.843137, 0.25098, 0, 1, 0.966536, 0.840209, 0.786667, 1, 1, 1, 1, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_va2v3"]
+streams_count = 6
+stream_0/stream = ExtResource("3_yi37i")
+stream_1/stream = ExtResource("4_4cr4u")
+stream_2/stream = ExtResource("5_fbigo")
+stream_3/stream = ExtResource("6_sm5cd")
+stream_4/stream = ExtResource("7_5ae3u")
+stream_5/stream = ExtResource("8_g8jsx")
+
+[node name="balls" type="CharacterBody2D"]
+scale = Vector2(0.154852, 0.154852)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("1_qpxnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 3
+scale = Vector2(-4.50513, -4.50513)
+shape = SubResource("CircleShape2D_q5x13")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.106991, 0.106991)
+texture = ExtResource("2_jnfyj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(0.908662, 0.908662)
+amount = 100
+lifetime = 0.1
+speed_scale = 0.5
+explosiveness = 0.1
+emission_shape = 1
+emission_sphere_radius = 21.74
+gravity = Vector2(0, 1000)
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_jwrew")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_kuvdr")
+color_initial_ramp = SubResource("Gradient_kckme")
+anim_speed_min = 21.4
+anim_speed_max = 71.82
+anim_offset_min = 0.1765
+anim_offset_max = 0.1765
+
+[node name="UndertaleOst024-Bonetrousle" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_va2v3")
+volume_db = -1.08
+autoplay = true

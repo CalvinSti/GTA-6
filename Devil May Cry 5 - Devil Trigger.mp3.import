@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0pgkcyht34q0"
+path="res://.godot/imported/Devil May Cry 5 - Devil Trigger.mp3-e8db25ce1f558fb36599c9fb0f6bbf84.mp3str"
+
+[deps]
+
+source_file="res://Devil May Cry 5 - Devil Trigger.mp3"
+dest_files=["res://.godot/imported/Devil May Cry 5 - Devil Trigger.mp3-e8db25ce1f558fb36599c9fb0f6bbf84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

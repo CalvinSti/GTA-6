@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxtgqsixqxa31"]
+
+[ext_resource type="Script" path="res://ohthemisery.gd" id="1_ttpsi"]
+[ext_resource type="Texture2D" uid="uid://8sdeoya47bvt" path="res://alien-with-tentacles-wearing-costume-pixel-game-vector-27840887-removebg-preview.png" id="2_d0n7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hjlx"]
+size = Vector2(32.3921, 29.1529)
+
+[node name="enemy" type="Area2D" groups=["enemies"]]
+scale = Vector2(1.85412, 1.85412)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_ttpsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.308717, 0.308717)
+shape = SubResource("RectangleShape2D_8hjlx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0290499, 0.0290499)
+texture = ExtResource("2_d0n7o")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

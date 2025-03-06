@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmxhv804kk1y0"
+path="res://.godot/imported/God only knows.mp3-6a2454f44dc3152679c0be2d5f29ebde.mp3str"
+
+[deps]
+
+source_file="res://God only knows.mp3"
+dest_files=["res://.godot/imported/God only knows.mp3-6a2454f44dc3152679c0be2d5f29ebde.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

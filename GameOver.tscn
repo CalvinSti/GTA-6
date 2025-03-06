@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bolecmutjpjc6"]
+
+[ext_resource type="Script" path="res://Gameover.gd" id="1_rl856"]
+
+[node name="Control" type="Control"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rl856")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -1.0
+offset_right = 27.0
+offset_bottom = 39.0
+scale = Vector2(3.81038, 5.34652)
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 61.0
+offset_right = 117.0
+offset_bottom = 154.0
+scale = Vector2(0.773041, 0.77111)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

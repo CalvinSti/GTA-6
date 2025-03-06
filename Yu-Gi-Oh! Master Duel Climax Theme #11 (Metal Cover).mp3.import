@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vqyxtrfr786h"
+path="res://.godot/imported/Yu-Gi-Oh! Master Duel Climax Theme #11 (Metal Cover).mp3-b35ebba1085c0fc04a8fc852ae2528f8.mp3str"
+
+[deps]
+
+source_file="res://Yu-Gi-Oh! Master Duel Climax Theme #11 (Metal Cover).mp3"
+dest_files=["res://.godot/imported/Yu-Gi-Oh! Master Duel Climax Theme #11 (Metal Cover).mp3-b35ebba1085c0fc04a8fc852ae2528f8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

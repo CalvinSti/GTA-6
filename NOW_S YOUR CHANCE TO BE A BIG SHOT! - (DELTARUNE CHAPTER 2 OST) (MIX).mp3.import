@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crduwdb0f54x5"
+path="res://.godot/imported/NOW_S YOUR CHANCE TO BE A BIG SHOT! - (DELTARUNE CHAPTER 2 OST) (MIX).mp3-439b76ed9a6b61cd9fe29eec16f8ff97.mp3str"
+
+[deps]
+
+source_file="res://NOW_S YOUR CHANCE TO BE A BIG SHOT! - (DELTARUNE CHAPTER 2 OST) (MIX).mp3"
+dest_files=["res://.godot/imported/NOW_S YOUR CHANCE TO BE A BIG SHOT! - (DELTARUNE CHAPTER 2 OST) (MIX).mp3-439b76ed9a6b61cd9fe29eec16f8ff97.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

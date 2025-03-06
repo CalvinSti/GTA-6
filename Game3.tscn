@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://s8tgs4rd8t85"]
+
+[ext_resource type="Script" path="res://Rhythym.gd" id="1_fvkvp"]
+[ext_resource type="PackedScene" uid="uid://baw5okx8lto4c" path="res://Library.tscn" id="2_148h5"]
+[ext_resource type="Script" path="res://button_2.gd" id="3_3axoa"]
+[ext_resource type="PackedScene" uid="uid://d1p4hjqs361mq" path="res://Target.tscn" id="4_tvfik"]
+[ext_resource type="PackedScene" uid="uid://dw5atn313inuq" path="res://particlessss.tscn" id="5_x7sbx"]
+
+[node name="Game3" type="Node2D"]
+script = ExtResource("1_fvkvp")
+
+[node name="Library" parent="." instance=ExtResource("2_148h5")]
+
+[node name="AudioStreamPlayer" parent="Library" index="0"]
+autoplay = false
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 55.0
+offset_bottom = 33.0
+scale = Vector2(0.221, 0.178)
+text = "Menu"
+script = ExtResource("3_3axoa")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Target" parent="." instance=ExtResource("4_tvfik")]
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("5_x7sbx")]
+
+[connection signal="ready" from="Library" to="." method="_on_library_ready"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+
+[editable path="Library"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ql3bss22kmwd"]
+
+[ext_resource type="Texture2D" uid="uid://6i232o3vgl71" path="res://Dog_Attack.png" id="1_dwe8s"]
+[ext_resource type="Script" path="res://dogattack_right.gd" id="1_hbsw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xogii"]
+
+[node name="DogattackRight" type="Area2D" groups=["dog", "enemies"]]
+light_mask = 32
+visibility_layer = 63
+scale = Vector2(0.6, 0.6)
+collision_layer = 33
+collision_mask = 11
+script = ExtResource("1_hbsw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.946031, 0.946031)
+shape = SubResource("RectangleShape2D_xogii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.0891118, 0.0891118)
+texture = ExtResource("1_dwe8s")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

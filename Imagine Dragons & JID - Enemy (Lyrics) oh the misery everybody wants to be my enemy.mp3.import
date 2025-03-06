@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cw88g17tildym"
+path="res://.godot/imported/Imagine Dragons & JID - Enemy (Lyrics) oh the misery everybody wants to be my enemy.mp3-3b89f1361cb2639c9bed6a22a6675cea.mp3str"
+
+[deps]
+
+source_file="res://Imagine Dragons & JID - Enemy (Lyrics) oh the misery everybody wants to be my enemy.mp3"
+dest_files=["res://.godot/imported/Imagine Dragons & JID - Enemy (Lyrics) oh the misery everybody wants to be my enemy.mp3-3b89f1361cb2639c9bed6a22a6675cea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

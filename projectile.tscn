@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://j3x61sv28a7"]
+
+[ext_resource type="Texture2D" uid="uid://dmganxwtr5i46" path="res://Untitled.png" id="1_1aa3p"]
+[ext_resource type="Script" path="res://Projectile.gd" id="1_4dkvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip2wr"]
+
+[sub_resource type="GDScript" id="GDScript_7i0e1"]
+resource_name = "move_component"
+script/source = "class_name MoveComponent
+extends Node
+
+@export var actor: Node2D
+@export var velocity: Vector2
+
+func _process(delta: float) -> void:
+	actor.translate(velocity * delta)
+"
+
+[node name="Projectile" type="Node2D"]
+
+[node name="Area2d" type="Area2D" parent="."]
+script = ExtResource("1_4dkvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2d"]
+shape = SubResource("RectangleShape2D_ip2wr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2d"]
+scale = Vector2(0.0204024, 0.0204024)
+texture = ExtResource("1_1aa3p")
+
+[node name="Node" type="Node" parent="."]
+script = SubResource("GDScript_7i0e1")
+
+[connection signal="body_entered" from="Area2d" to="Area2d" method="_on_body_entered"]

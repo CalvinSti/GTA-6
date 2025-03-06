@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsfkfsdwtidx7"]
+
+[ext_resource type="Script" path="res://Spaceship Movement.gd" id="1_qovxd"]
+[ext_resource type="Texture2D" uid="uid://dmganxwtr5i46" path="res://Untitled.png" id="2_ti6og"]
+[ext_resource type="AudioStream" uid="uid://d0pgkcyht34q0" path="res://Devil May Cry 5 - Devil Trigger.mp3" id="3_niwmu"]
+[ext_resource type="AudioStream" uid="uid://vqyxtrfr786h" path="res://Yu-Gi-Oh! Master Duel Climax Theme #11 (Metal Cover).mp3" id="4_b4xw3"]
+[ext_resource type="AudioStream" uid="uid://d3yj4ob5k7ag5" path="res://Dive!!  A-One (The Strongest Battlegrounds KJ_s Official Theme Song).mp3" id="4_lwmc3"]
+[ext_resource type="AudioStream" uid="uid://b4s36miois16t" path="res://Find Your Flame (feat. Kellin Quinn & Tyler Smyth).mp3" id="5_25qq5"]
+[ext_resource type="AudioStream" uid="uid://bmxhv804kk1y0" path="res://God only knows.mp3" id="6_2xaqh"]
+[ext_resource type="AudioStream" uid="uid://cw88g17tildym" path="res://Imagine Dragons & JID - Enemy (Lyrics) oh the misery everybody wants to be my enemy.mp3" id="7_t3kfn"]
+[ext_resource type="AudioStream" uid="uid://bcwujekryu38o" path="res://The Only Thing I Know for Real (Maniac Mix)  Metal Gear Rising_ Revengeance (Soundtrack).mp3" id="8_kcdrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bta3s"]
+size = Vector2(39.7662, 39.7662)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3c86w"]
+streams_count = 7
+stream_0/stream = ExtResource("3_niwmu")
+stream_1/stream = ExtResource("4_b4xw3")
+stream_2/stream = ExtResource("4_lwmc3")
+stream_3/stream = ExtResource("5_25qq5")
+stream_4/stream = ExtResource("6_2xaqh")
+stream_5/stream = ExtResource("7_t3kfn")
+stream_6/stream = ExtResource("8_kcdrk")
+
+[node name="Shiplayer" type="Area2D"]
+scale = Vector2(-0.00598404, -0.00598404)
+collision_layer = 2
+collision_mask = 21
+script = ExtResource("1_qovxd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-6.66184e-07, 3.56009e-07)
+scale = Vector2(0.160606, 0.160606)
+shape = SubResource("RectangleShape2D_bta3s")
+
+[node name="Muzzle2" type="Marker2D" parent="."]
+position = Vector2(-1.03075e-11, 2673.78)
+rotation = 3.14159
+scale = Vector2(0.00598404, 0.00598404)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.0059513, 0.00598404)
+stream = SubResource("AudioStreamRandomizer_3c86w")
+autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_ti6og")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

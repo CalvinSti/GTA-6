@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbu0p0cl4rr0d"
+path="res://.godot/imported/DM DOKURO - SAVE (Encore).mp3-38175a5e082ee5ac5680eb78c3ecdf94.mp3str"
+
+[deps]
+
+source_file="res://DM DOKURO - SAVE (Encore).mp3"
+dest_files=["res://.godot/imported/DM DOKURO - SAVE (Encore).mp3-38175a5e082ee5ac5680eb78c3ecdf94.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

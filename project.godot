@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GTA6"
+run/main_scene="res://main_menu.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://image.png"
+
+[autoload]
+
+Levels="*res://levels.tscn"
+Rscore="*res://rscore.tscn"
+Sscore="*res://Sscore.tscn"
+
+[debug]
+
+settings/name="GSTKMTLG"
+settings/icon="res://icon.svg"
+settings/layer_7=""
+settings/layer_6=""
+settings/layer_3=""
+settings/layer_5=""
+settings/layer_4=""
+settings/layer_2=""
+settings/layer_1=""
+
+[display]
+
+window/size/viewport_width=120
+window/size/viewport_height=200
+window/size/window_width_override=360
+window/size/window_height_override=640
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[global_group]
+
+Brick=""
+enemies=""
+dogs=""
+dog=""
+
+[layer_names]
+
+3d_render/layer_1="env"
+3d_render/layer_2="player"
+3d_render/layer_3="enemies"
+3d_render/layer_4="player_laser"
+3d_render/layer_5="enemy_laser"
+3d_render/layer_6="dog"
+3d_render/layer_7="dogs"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

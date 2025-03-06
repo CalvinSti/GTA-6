@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1p4hjqs361mq"]
+
+[ext_resource type="Script" path="res://newtarget.gd" id="1_vq51d"]
+[ext_resource type="Texture2D" uid="uid://d2ncovf1h5dom" path="res://Untitled 03-03-2025 02-49-3.png" id="2_gcl0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o52qv"]
+
+[node name="Target" type="Area2D"]
+script = ExtResource("1_vq51d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.924028, 0.915161)
+shape = SubResource("CircleShape2D_o52qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0694467, 0.0694467)
+texture = ExtResource("2_gcl0b")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

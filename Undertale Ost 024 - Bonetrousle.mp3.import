@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bunvve2v7r827"
+path="res://.godot/imported/Undertale Ost 024 - Bonetrousle.mp3-ce2ce59545620938e8d89f5a37473e08.mp3str"
+
+[deps]
+
+source_file="res://Undertale Ost 024 - Bonetrousle.mp3"
+dest_files=["res://.godot/imported/Undertale Ost 024 - Bonetrousle.mp3-ce2ce59545620938e8d89f5a37473e08.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
